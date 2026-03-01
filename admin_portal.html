@@ -996,6 +996,21 @@
             max-width: 327px !important;
         }
 
+        /* Events & Groups page - auto-fill column layout */
+        #event-review-sections {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 327px)) !important;
+            gap: 16px !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            align-items: start !important;
+            margin-bottom: 16px !important;
+        }
+
+        #event-review-sections > div {
+            max-width: 327px !important;
+        }
+
         /* Prompts page - 3 column responsive layout */
         #prompt-review-sections {
             display: grid !important;
@@ -3937,6 +3952,242 @@
                 </div>
 
                 <div class="page" id="events">
+                    <div id="event-review-sections" style="padding-bottom: 80px;">
+                        <!-- Column 1 -->
+                        <div style="display: flex; flex-direction: column; gap: 16px; min-width: 0;">
+                            <!-- Event: Summer Bonfire Hangout -->
+                            <div onclick="toggleEventSelect(this)" style="cursor: pointer; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; transition: all 0.2s ease;">
+                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                    <span style="font-size: 16px;">🎉</span>
+                                    <span style="font-weight: 700; color: var(--text-primary); font-size: 14px;">Summer Bonfire Hangout</span>
+                                </div>
+                                <div style="margin-bottom: 12px; border-radius: 8px; overflow: hidden;">
+                                    <img src="./photos/profile_photo_1.jpg" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" alt="Event cover">
+                                </div>
+                                <div style="background: var(--grey50); border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+                                    <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.4;">Come join us for a chill bonfire at the beach. Bring snacks and good vibes only.</div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <img src="./photos/profile_photo_3.jpg" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0;" alt="Creator">
+                                    <span style="font-size: 12px; font-weight: 600; color: var(--text-primary);">Created by Gage</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+                                    <span style="font-size: 11px; color: var(--text-secondary);">📆 Mar 15, 2026 at 7:00 PM</span>
+                                    <span style="font-size: 11px; color: var(--text-secondary);">👥 24 attending</span>
+                                </div>
+                            </div>
+
+                            <!-- Group: Bible Study Group -->
+                            <div onclick="toggleEventSelect(this)" style="cursor: pointer; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; transition: all 0.2s ease;">
+                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                    <span style="font-size: 16px;">👥</span>
+                                    <span style="font-weight: 700; color: var(--text-primary); font-size: 14px;">Bible Study Group</span>
+                                </div>
+                                <div style="margin-bottom: 12px; border-radius: 8px; overflow: hidden;">
+                                    <img src="./photos/profile_photo_4.jpg" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" alt="Group cover">
+                                </div>
+                                <div style="background: var(--grey50); border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+                                    <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.4;">Weekly group to discuss scripture and grow together in faith. All are welcome regardless of background.</div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <img src="./photos/profile_photo_5.jpg" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0;" alt="Creator">
+                                    <span style="font-size: 12px; font-weight: 600; color: var(--text-primary);">Created by Emily</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;">
+                                    <span style="font-size: 11px; color: var(--text-secondary);">👥 18 members</span>
+                                </div>
+                            </div>
+
+                            <!-- Event: Hiking Trip to Blue Ridge -->
+                            <div onclick="toggleEventSelect(this)" style="cursor: pointer; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; transition: all 0.2s ease;">
+                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                    <span style="font-size: 16px;">🎉</span>
+                                    <span style="font-weight: 700; color: var(--text-primary); font-size: 14px;">Hiking Trip to Blue Ridge</span>
+                                </div>
+                                <div style="margin-bottom: 12px; border-radius: 8px; overflow: hidden;">
+                                    <img src="./photos/profile_photo_2.jpg" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" alt="Event cover">
+                                </div>
+                                <div style="background: var(--grey50); border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+                                    <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.4;">Let's hit the trails! Moderate difficulty, about 6 miles round trip. Bring water and sturdy shoes.</div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <img src="./photos/profile_photo_6.jpg" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0;" alt="Creator">
+                                    <span style="font-size: 12px; font-weight: 600; color: var(--text-primary);">Created by Marcus</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+                                    <span style="font-size: 11px; color: var(--text-secondary);">📆 Apr 3, 2026 at 9:00 AM</span>
+                                    <span style="font-size: 11px; color: var(--text-secondary);">👥 12 attending</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Column 2 -->
+                        <div style="display: flex; flex-direction: column; gap: 16px; min-width: 0;">
+                            <!-- Group: Young Professionals Mixer -->
+                            <div onclick="toggleEventSelect(this)" style="cursor: pointer; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; transition: all 0.2s ease;">
+                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                    <span style="font-size: 16px;">👥</span>
+                                    <span style="font-weight: 700; color: var(--text-primary); font-size: 14px;">Young Professionals Mixer</span>
+                                </div>
+                                <div style="margin-bottom: 12px; border-radius: 8px; overflow: hidden;">
+                                    <img src="./photos/profile_photo_5.jpg" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" alt="Group cover">
+                                </div>
+                                <div style="background: var(--grey50); border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+                                    <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.4;">Networking group for career-driven singles in their 20s and 30s. Monthly meetups at rotating venues.</div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <img src="./photos/profile_photo_1.jpg" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0;" alt="Creator">
+                                    <span style="font-size: 12px; font-weight: 600; color: var(--text-primary);">Created by Tanya</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;">
+                                    <span style="font-size: 11px; color: var(--text-secondary);">👥 45 members</span>
+                                </div>
+                            </div>
+
+                            <!-- Event: Potluck & Game Night -->
+                            <div onclick="toggleEventSelect(this)" style="cursor: pointer; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; transition: all 0.2s ease;">
+                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                    <span style="font-size: 16px;">🎉</span>
+                                    <span style="font-weight: 700; color: var(--text-primary); font-size: 14px;">Potluck & Game Night</span>
+                                </div>
+                                <div style="margin-bottom: 12px; border-radius: 8px; overflow: hidden;">
+                                    <img src="./photos/profile_photo_3.jpg" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" alt="Event cover">
+                                </div>
+                                <div style="background: var(--grey50); border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+                                    <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.4;">Bring a dish to share and your competitive spirit! Board games, card games, and great conversation.</div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <img src="./photos/profile_photo_2.jpg" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0;" alt="Creator">
+                                    <span style="font-size: 12px; font-weight: 600; color: var(--text-primary);">Created by Chris</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+                                    <span style="font-size: 11px; color: var(--text-secondary);">📆 Mar 22, 2026 at 6:00 PM</span>
+                                    <span style="font-size: 11px; color: var(--text-secondary);">👥 31 attending</span>
+                                </div>
+                            </div>
+
+                            <!-- Event: Coffee & Conversation -->
+                            <div onclick="toggleEventSelect(this)" style="cursor: pointer; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; transition: all 0.2s ease;">
+                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                    <span style="font-size: 16px;">🎉</span>
+                                    <span style="font-weight: 700; color: var(--text-primary); font-size: 14px;">Coffee & Conversation</span>
+                                </div>
+                                <div style="margin-bottom: 12px; border-radius: 8px; overflow: hidden;">
+                                    <img src="./photos/profile_photo_6.jpg" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" alt="Event cover">
+                                </div>
+                                <div style="background: var(--grey50); border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+                                    <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.4;">Casual morning meetup at Blue Bottle Coffee downtown. No agenda, just genuine connection over a good cup.</div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <img src="./photos/profile_photo_4.jpg" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0;" alt="Creator">
+                                    <span style="font-size: 12px; font-weight: 600; color: var(--text-primary);">Created by Brianna</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+                                    <span style="font-size: 11px; color: var(--text-secondary);">📆 Mar 28, 2026 at 10:00 AM</span>
+                                    <span style="font-size: 11px; color: var(--text-secondary);">👥 8 attending</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Column 3 -->
+                        <div style="display: flex; flex-direction: column; gap: 16px; min-width: 0;">
+                            <!-- Group: Runners Club -->
+                            <div onclick="toggleEventSelect(this)" style="cursor: pointer; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; transition: all 0.2s ease;">
+                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                    <span style="font-size: 16px;">👥</span>
+                                    <span style="font-weight: 700; color: var(--text-primary); font-size: 14px;">Runners Club</span>
+                                </div>
+                                <div style="margin-bottom: 12px; border-radius: 8px; overflow: hidden;">
+                                    <img src="./photos/profile_photo_1.jpg" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" alt="Group cover">
+                                </div>
+                                <div style="background: var(--grey50); border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+                                    <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.4;">Weekly runs around the city for all skill levels. We meet Saturdays at 7 AM rain or shine.</div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <img src="./photos/profile_photo_3.jpg" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0;" alt="Creator">
+                                    <span style="font-size: 12px; font-weight: 600; color: var(--text-primary);">Created by Derek</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;">
+                                    <span style="font-size: 11px; color: var(--text-secondary);">👥 62 members</span>
+                                </div>
+                            </div>
+
+                            <!-- Event: Volunteer Day at Food Bank -->
+                            <div onclick="toggleEventSelect(this)" style="cursor: pointer; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; transition: all 0.2s ease;">
+                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                    <span style="font-size: 16px;">🎉</span>
+                                    <span style="font-weight: 700; color: var(--text-primary); font-size: 14px;">Volunteer Day at Food Bank</span>
+                                </div>
+                                <div style="margin-bottom: 12px; border-radius: 8px; overflow: hidden;">
+                                    <img src="./photos/profile_photo_2.jpg" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" alt="Event cover">
+                                </div>
+                                <div style="background: var(--grey50); border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+                                    <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.4;">Give back to the community! We'll be sorting and packing meals for families in need. Lunch provided.</div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <img src="./photos/profile_photo_5.jpg" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0;" alt="Creator">
+                                    <span style="font-size: 12px; font-weight: 600; color: var(--text-primary);">Created by Kelsey</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+                                    <span style="font-size: 11px; color: var(--text-secondary);">📆 Apr 12, 2026 at 8:00 AM</span>
+                                    <span style="font-size: 11px; color: var(--text-secondary);">👥 19 attending</span>
+                                </div>
+                            </div>
+
+                            <!-- Group: Book Club - March Pick -->
+                            <div onclick="toggleEventSelect(this)" style="cursor: pointer; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; transition: all 0.2s ease;">
+                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                    <span style="font-size: 16px;">👥</span>
+                                    <span style="font-weight: 700; color: var(--text-primary); font-size: 14px;">Book Club - March Pick</span>
+                                </div>
+                                <div style="margin-bottom: 12px; border-radius: 8px; overflow: hidden;">
+                                    <img src="./photos/profile_photo_4.jpg" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" alt="Group cover">
+                                </div>
+                                <div style="background: var(--grey50); border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+                                    <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.4;">This month we're reading "The Seven Husbands of Evelyn Hugo." Discussion meetup on the last Friday.</div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <img src="./photos/profile_photo_6.jpg" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0;" alt="Creator">
+                                    <span style="font-size: 12px; font-weight: 600; color: var(--text-primary);">Created by Suzanne</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;">
+                                    <span style="font-size: 11px; color: var(--text-secondary);">👥 15 members</span>
+                                </div>
+                            </div>
+
+                            <!-- Event: Outdoor Movie Night -->
+                            <div onclick="toggleEventSelect(this)" style="cursor: pointer; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; transition: all 0.2s ease;">
+                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                    <span style="font-size: 16px;">🎉</span>
+                                    <span style="font-weight: 700; color: var(--text-primary); font-size: 14px;">Outdoor Movie Night</span>
+                                </div>
+                                <div style="margin-bottom: 12px; border-radius: 8px; overflow: hidden;">
+                                    <img src="./photos/profile_photo_5.jpg" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" alt="Event cover">
+                                </div>
+                                <div style="background: var(--grey50); border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+                                    <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.4;">Blankets, popcorn, and a classic rom-com under the stars. Voting on the movie in the group chat!</div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <img src="./photos/profile_photo_1.jpg" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0;" alt="Creator">
+                                    <span style="font-size: 12px; font-weight: 600; color: var(--text-primary);">Created by Jared</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+                                    <span style="font-size: 11px; color: var(--text-secondary);">📆 Mar 30, 2026 at 8:00 PM</span>
+                                    <span style="font-size: 11px; color: var(--text-secondary);">👥 37 attending</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Footer -->
+                    <div id="eventsActionFooter" style="position: fixed; bottom: 0; left: 0; right: 0; background: var(--grey0); border-top: 1px solid var(--border-color); padding: 16px 32px; display: none; gap: 12px; align-items: center; justify-content: flex-end; z-index: 90;">
+                        <div class="action-buttons-scroll" style="display: flex; gap: 12px; align-items: center; overflow-x: auto; min-width: 0;">
+                            <button style="background: var(--grey0); border: 2px solid #FE6767; color: #FE6767; padding: 8px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 12px; white-space: nowrap; flex-shrink: 0;">Remove</button>
+                            <button style="background: #56CA00; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; border: none; font-size: 12px; white-space: nowrap; flex-shrink: 0;">Approve</button>
+                            <button style="background: var(--grey0); border: 2px solid #F5B02B; color: #F5B02B; padding: 8px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 12px; white-space: nowrap; flex-shrink: 0;">Flag</button>
+                            <button style="background: var(--grey0); border: 1px solid var(--border-color); color: var(--text-secondary); padding: 8px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 12px; white-space: nowrap; flex-shrink: 0;">Deselect All</button>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="page" id="notes">
@@ -4725,11 +4976,13 @@
             const promptsFooter = document.getElementById('promptsActionFooter');
             const notesFooter = document.getElementById('notesActionFooter');
             const voiceMessagesFooter = document.getElementById('voiceMessagesActionFooter');
+            const eventsFooter = document.getElementById('eventsActionFooter');
             verificationFooter.style.display = pageId === 'verification' ? 'flex' : 'none';
             photosFooter.style.display = pageId === 'photos' ? 'flex' : 'none';
             promptsFooter.style.display = pageId === 'prompts' ? 'flex' : 'none';
             notesFooter.style.display = pageId === 'notes' ? 'flex' : 'none';
             voiceMessagesFooter.style.display = pageId === 'voice-messages' ? 'flex' : 'none';
+            eventsFooter.style.display = pageId === 'events' ? 'flex' : 'none';
 
             closeMobileSidebar();
         }
@@ -4940,6 +5193,17 @@
 
         function toggleVoiceMessageSelect(element) {
             // Toggle blue outline on voice message selection
+            if (element.dataset.selected === 'true') {
+                element.style.border = '1px solid var(--border-color)';
+                element.dataset.selected = 'false';
+            } else {
+                element.style.border = '2px solid var(--brand-primary)';
+                element.dataset.selected = 'true';
+            }
+        }
+
+        function toggleEventSelect(element) {
+            // Toggle blue outline on event/group selection
             if (element.dataset.selected === 'true') {
                 element.style.border = '1px solid var(--border-color)';
                 element.dataset.selected = 'false';
