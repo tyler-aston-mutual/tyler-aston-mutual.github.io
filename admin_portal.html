@@ -405,6 +405,13 @@
             overflow: hidden;
             text-overflow: ellipsis;
             min-width: 0;
+            display: none;
+        }
+
+        @media (min-width: 600px) {
+            .sidebar-logo span {
+                display: block;
+            }
         }
 
         .sidebar.collapsed .sidebar-logo {
