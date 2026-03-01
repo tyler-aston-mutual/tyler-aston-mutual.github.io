@@ -682,11 +682,11 @@
         }
 
         /* Dark mode adjustments */
-        body.dark-mode #moreBtn {
+        body.dark-mode .more-btn {
             background: transparent;
         }
 
-        body.dark-mode #moreBtn:hover {
+        body.dark-mode .more-btn:hover {
             background: var(--grey100);
         }
 
@@ -1878,8 +1878,8 @@
                         <!-- Action Buttons -->
                         <div style="display: flex; gap: 12px; align-items: center; overflow-x: auto; min-width: 0; padding-bottom: 8px;">
                             <div style="position: relative; display: inline-block;">
-                                <button id="moreBtn" style="border: 1px solid var(--border-color); color: var(--text-primary); padding: 10px 16px; border-radius: 8px; font-weight: 700; cursor: pointer;" onclick="toggleMoreMenu()">⋮</button>
-                                <div id="moreMenu" style="display: none; position: absolute; bottom: 100%; right: 0; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 8px; box-shadow: 0 -2px 8px rgba(0,0,0,0.1); min-width: 200px; margin-bottom: 8px; overflow: hidden; z-index: 1000;">
+                                <button class="more-btn" style="border: 1px solid var(--border-color); color: var(--text-primary); padding: 10px 16px; border-radius: 8px; font-weight: 700; cursor: pointer;" onclick="toggleMoreMenu(this)">⋮</button>
+                                <div class="more-menu" style="display: none; position: absolute; bottom: 100%; right: 0; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 8px; box-shadow: 0 -2px 8px rgba(0,0,0,0.1); min-width: 200px; margin-bottom: 8px; overflow: hidden; z-index: 1000;">
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Archive</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Manual Verification</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Match History</button>
@@ -2184,8 +2184,8 @@
                         <!-- Action Buttons -->
                         <div style="display: flex; gap: 12px; align-items: center; overflow-x: auto; min-width: 0; padding-bottom: 8px;">
                             <div style="position: relative; display: inline-block;">
-                                <button id="moreBtn" style="border: 1px solid var(--border-color); color: var(--text-primary); padding: 10px 16px; border-radius: 8px; font-weight: 700; cursor: pointer;" onclick="toggleMoreMenu()">⋮</button>
-                                <div id="moreMenu" style="display: none; position: absolute; bottom: 100%; right: 0; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 8px; box-shadow: 0 -2px 8px rgba(0,0,0,0.1); min-width: 200px; margin-bottom: 8px; overflow: hidden; z-index: 1000;">
+                                <button class="more-btn" style="border: 1px solid var(--border-color); color: var(--text-primary); padding: 10px 16px; border-radius: 8px; font-weight: 700; cursor: pointer;" onclick="toggleMoreMenu(this)">⋮</button>
+                                <div class="more-menu" style="display: none; position: absolute; bottom: 100%; right: 0; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 8px; box-shadow: 0 -2px 8px rgba(0,0,0,0.1); min-width: 200px; margin-bottom: 8px; overflow: hidden; z-index: 1000;">
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Archive</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Manual Verification</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Match History</button>
@@ -2490,8 +2490,8 @@
                         <!-- Action Buttons -->
                         <div style="display: flex; gap: 12px; align-items: center; overflow-x: auto; min-width: 0; padding-bottom: 8px;">
                             <div style="position: relative; display: inline-block;">
-                                <button id="moreBtn" style="border: 1px solid var(--border-color); color: var(--text-primary); padding: 10px 16px; border-radius: 8px; font-weight: 700; cursor: pointer;" onclick="toggleMoreMenu()">⋮</button>
-                                <div id="moreMenu" style="display: none; position: absolute; bottom: 100%; right: 0; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 8px; box-shadow: 0 -2px 8px rgba(0,0,0,0.1); min-width: 200px; margin-bottom: 8px; overflow: hidden; z-index: 1000;">
+                                <button class="more-btn" style="border: 1px solid var(--border-color); color: var(--text-primary); padding: 10px 16px; border-radius: 8px; font-weight: 700; cursor: pointer;" onclick="toggleMoreMenu(this)">⋮</button>
+                                <div class="more-menu" style="display: none; position: absolute; bottom: 100%; right: 0; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 8px; box-shadow: 0 -2px 8px rgba(0,0,0,0.1); min-width: 200px; margin-bottom: 8px; overflow: hidden; z-index: 1000;">
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Archive</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Manual Verification</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Match History</button>
@@ -2796,8 +2796,8 @@
                         <!-- Action Buttons -->
                         <div style="display: flex; gap: 12px; align-items: center; overflow-x: auto; min-width: 0; padding-bottom: 8px;">
                             <div style="position: relative; display: inline-block;">
-                                <button id="moreBtn" style="border: 1px solid var(--border-color); color: var(--text-primary); padding: 10px 16px; border-radius: 8px; font-weight: 700; cursor: pointer;" onclick="toggleMoreMenu()">⋮</button>
-                                <div id="moreMenu" style="display: none; position: absolute; bottom: 100%; right: 0; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 8px; box-shadow: 0 -2px 8px rgba(0,0,0,0.1); min-width: 200px; margin-bottom: 8px; overflow: hidden; z-index: 1000;">
+                                <button class="more-btn" style="border: 1px solid var(--border-color); color: var(--text-primary); padding: 10px 16px; border-radius: 8px; font-weight: 700; cursor: pointer;" onclick="toggleMoreMenu(this)">⋮</button>
+                                <div class="more-menu" style="display: none; position: absolute; bottom: 100%; right: 0; background: var(--grey0); border: 1px solid var(--border-color); border-radius: 8px; box-shadow: 0 -2px 8px rgba(0,0,0,0.1); min-width: 200px; margin-bottom: 8px; overflow: hidden; z-index: 1000;">
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Archive</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Manual Verification</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Match History</button>
@@ -4835,11 +4835,10 @@
             // In production, this would trigger your authentication logout
         }
 
-        function toggleMoreMenu() {
-            const menu = document.getElementById('moreMenu');
-            const btn = document.getElementById('moreBtn');
+        function toggleMoreMenu(btn) {
+            const menu = btn.nextElementSibling;
             const isDarkMode = document.body.classList.contains('dark-mode');
-            
+
             if (menu.style.display === 'none') {
                 menu.style.display = 'block';
                 btn.style.background = isDarkMode ? 'transparent' : 'var(--grey50)';
@@ -5078,12 +5077,13 @@
 
         // Close menu when clicking outside
         document.addEventListener('click', function(event) {
-            const menu = document.getElementById('moreMenu');
-            const btn = document.getElementById('moreBtn');
-            if (menu && btn && !btn.contains(event.target) && !menu.contains(event.target)) {
-                menu.style.display = 'none';
-                btn.style.background = '';
-            }
+            document.querySelectorAll('.more-menu').forEach(function(menu) {
+                const btn = menu.previousElementSibling;
+                if (btn && !btn.contains(event.target) && !menu.contains(event.target)) {
+                    menu.style.display = 'none';
+                    btn.style.background = '';
+                }
+            });
         });
 
         // Initialize
