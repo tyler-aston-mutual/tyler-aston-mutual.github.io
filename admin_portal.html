@@ -690,6 +690,39 @@
             background: var(--grey100);
         }
 
+        /* Mobile bottom sheet for more menu */
+        .more-menu-backdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 9999;
+        }
+        .more-menu-backdrop.active {
+            display: block;
+        }
+        @media (max-width: 599px) {
+            .more-menu[style*="display: block"] {
+                position: fixed !important;
+                bottom: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                top: auto !important;
+                margin-bottom: 0 !important;
+                border-radius: 16px 16px 0 0 !important;
+                min-width: 100% !important;
+                z-index: 10000 !important;
+                box-shadow: 0 -4px 20px rgba(0,0,0,0.15) !important;
+            }
+            .more-menu button {
+                padding: 16px 20px !important;
+                font-size: 16px !important;
+            }
+        }
+
         .search-box {
             display: flex;
             align-items: center;
@@ -1434,6 +1467,7 @@
     </style>
 </head>
 <body>
+    <div class="more-menu-backdrop" id="moreMenuBackdrop"></div>
     <div class="container">
         <!-- SIDEBAR -->
         <div class="sidebar" id="sidebar">
@@ -4837,13 +4871,21 @@
 
         function toggleMoreMenu(btn) {
             const menu = btn.nextElementSibling;
+            const backdrop = document.getElementById('moreMenuBackdrop');
             const isDarkMode = document.body.classList.contains('dark-mode');
 
             if (menu.style.display === 'none') {
+                // Close any other open menus first
+                document.querySelectorAll('.more-menu').forEach(function(m) {
+                    m.style.display = 'none';
+                    if (m.previousElementSibling) m.previousElementSibling.style.background = '';
+                });
                 menu.style.display = 'block';
+                backdrop.classList.add('active');
                 btn.style.background = isDarkMode ? 'transparent' : 'var(--grey50)';
             } else {
                 menu.style.display = 'none';
+                backdrop.classList.remove('active');
                 btn.style.background = '';
             }
         }
@@ -5077,13 +5119,30 @@
 
         // Close menu when clicking outside
         document.addEventListener('click', function(event) {
+            var backdrop = document.getElementById('moreMenuBackdrop');
             document.querySelectorAll('.more-menu').forEach(function(menu) {
-                const btn = menu.previousElementSibling;
+                var btn = menu.previousElementSibling;
                 if (btn && !btn.contains(event.target) && !menu.contains(event.target)) {
                     menu.style.display = 'none';
                     btn.style.background = '';
                 }
             });
+            // Hide backdrop if no menus are open
+            var anyOpen = false;
+            document.querySelectorAll('.more-menu').forEach(function(menu) {
+                if (menu.style.display === 'block') anyOpen = true;
+            });
+            if (!anyOpen) backdrop.classList.remove('active');
+        });
+
+        // Backdrop tap closes menus
+        document.getElementById('moreMenuBackdrop').addEventListener('click', function() {
+            document.querySelectorAll('.more-menu').forEach(function(menu) {
+                menu.style.display = 'none';
+                var btn = menu.previousElementSibling;
+                if (btn) btn.style.background = '';
+            });
+            this.classList.remove('active');
         });
 
         // Initialize
