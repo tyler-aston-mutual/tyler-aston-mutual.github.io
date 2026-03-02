@@ -1945,23 +1945,46 @@
 
                             <!-- PREFERENCES & PREMIUM SECTION -->
                             <div style="background: var(--grey0); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px;">
+                                <!-- Visible fields -->
                                 <div style="display: flex; gap: 16px;">
-                                    <!-- Left column: Preferences -->
+                                    <!-- Left column -->
                                     <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
-                                        <div style="font-size: 13px; font-weight: 700; color: var(--text-primary);">Preferences</div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Age (low)</label><input type="text" value="23" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Age (high)</label><input type="text" value="43" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Search Radius</label><input type="text" value="300" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Match Notifications</label><label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
                                         <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Message Notifications</label><label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
                                     </div>
-                                    <!-- Right column: Premium Settings -->
+                                    <!-- Right column -->
                                     <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
-                                        <div style="font-size: 13px; font-weight: 700; color: var(--text-primary);">Premium Settings</div>
                                         <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Has Premium</label><label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Expiration</label><input type="text" value="" placeholder="MM/DD/YYYY" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Note Balance</label><input type="text" value="0" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Start a Boost</label><input type="text" value="" placeholder="MM/DD/YYYY" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
+                                    </div>
+                                </div>
+                                <!-- Divider + More/Less toggle -->
+                                <div style="margin-top: 16px; text-align: center;">
+                                    <hr style="border: none; border-top: 1px solid var(--border-color); margin: 0 0 8px 0;">
+                                    <span onclick="toggleMoreFields(this)" style="cursor: pointer; font-size: 12px; color: var(--brand-primary); font-weight: 600;">More ˅</span>
+                                </div>
+                                <!-- Hidden fields (revealed by More toggle) -->
+                                <div style="display: none; margin-top: 16px;">
+                                    <div style="display: flex; gap: 16px;">
+                                        <!-- Left column -->
+                                        <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
+                                            <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">⛪ Denomination</label><input type="text" value="Evangelical" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
+                                            <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Traveling</label><label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+                                            <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Pause Account</label><label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+                                            <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Ninja Mode</label><label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+                                            <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">🟢 Online Status</label><input type="text" value="Active" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
+                                        </div>
+                                        <!-- Right column -->
+                                        <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
+                                            <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">🏷️ Interests</label><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">bible study</span><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">sushi</span><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">tacos</span><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">skiing</span><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">soccer</span></div></div>
+                                            <div style="flex: 1;"></div>
+                                            <button onclick="alert('Profile shared!')" style="width: 100%; padding: 10px 16px; background: var(--grey50); border: 1px solid var(--border-color); border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--text-primary); cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--grey100)'" onmouseout="this.style.background='var(--grey50)'">📤 Share Profile</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -2286,23 +2309,46 @@
 
                             <!-- PREFERENCES & PREMIUM SECTION -->
                             <div style="background: var(--grey0); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px;">
+                                <!-- Visible fields -->
                                 <div style="display: flex; gap: 16px;">
-                                    <!-- Left column: Preferences -->
+                                    <!-- Left column -->
                                     <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
-                                        <div style="font-size: 13px; font-weight: 700; color: var(--text-primary);">Preferences</div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Age (low)</label><input type="text" value="23" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Age (high)</label><input type="text" value="43" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Search Radius</label><input type="text" value="300" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Match Notifications</label><label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
                                         <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Message Notifications</label><label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
                                     </div>
-                                    <!-- Right column: Premium Settings -->
+                                    <!-- Right column -->
                                     <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
-                                        <div style="font-size: 13px; font-weight: 700; color: var(--text-primary);">Premium Settings</div>
                                         <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Has Premium</label><label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Expiration</label><input type="text" value="" placeholder="MM/DD/YYYY" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Note Balance</label><input type="text" value="0" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Start a Boost</label><input type="text" value="" placeholder="MM/DD/YYYY" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
+                                    </div>
+                                </div>
+                                <!-- Divider + More/Less toggle -->
+                                <div style="margin-top: 16px; text-align: center;">
+                                    <hr style="border: none; border-top: 1px solid var(--border-color); margin: 0 0 8px 0;">
+                                    <span onclick="toggleMoreFields(this)" style="cursor: pointer; font-size: 12px; color: var(--brand-primary); font-weight: 600;">More ˅</span>
+                                </div>
+                                <!-- Hidden fields (revealed by More toggle) -->
+                                <div style="display: none; margin-top: 16px;">
+                                    <div style="display: flex; gap: 16px;">
+                                        <!-- Left column -->
+                                        <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
+                                            <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">⛪ Denomination</label><input type="text" value="Evangelical" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
+                                            <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Traveling</label><label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+                                            <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Pause Account</label><label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+                                            <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Ninja Mode</label><label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+                                            <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">🟢 Online Status</label><input type="text" value="Active" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
+                                        </div>
+                                        <!-- Right column -->
+                                        <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
+                                            <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">🏷️ Interests</label><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">bible study</span><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">sushi</span><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">tacos</span><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">skiing</span><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">soccer</span></div></div>
+                                            <div style="flex: 1;"></div>
+                                            <button onclick="alert('Profile shared!')" style="width: 100%; padding: 10px 16px; background: var(--grey50); border: 1px solid var(--border-color); border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--text-primary); cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--grey100)'" onmouseout="this.style.background='var(--grey50)'">📤 Share Profile</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -2627,23 +2673,46 @@
 
                             <!-- PREFERENCES & PREMIUM SECTION -->
                             <div style="background: var(--grey0); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px;">
+                                <!-- Visible fields -->
                                 <div style="display: flex; gap: 16px;">
-                                    <!-- Left column: Preferences -->
+                                    <!-- Left column -->
                                     <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
-                                        <div style="font-size: 13px; font-weight: 700; color: var(--text-primary);">Preferences</div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Age (low)</label><input type="text" value="23" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Age (high)</label><input type="text" value="43" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Search Radius</label><input type="text" value="300" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Match Notifications</label><label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
                                         <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Message Notifications</label><label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
                                     </div>
-                                    <!-- Right column: Premium Settings -->
+                                    <!-- Right column -->
                                     <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
-                                        <div style="font-size: 13px; font-weight: 700; color: var(--text-primary);">Premium Settings</div>
                                         <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Has Premium</label><label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Expiration</label><input type="text" value="" placeholder="MM/DD/YYYY" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Note Balance</label><input type="text" value="0" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Start a Boost</label><input type="text" value="" placeholder="MM/DD/YYYY" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
+                                    </div>
+                                </div>
+                                <!-- Divider + More/Less toggle -->
+                                <div style="margin-top: 16px; text-align: center;">
+                                    <hr style="border: none; border-top: 1px solid var(--border-color); margin: 0 0 8px 0;">
+                                    <span onclick="toggleMoreFields(this)" style="cursor: pointer; font-size: 12px; color: var(--brand-primary); font-weight: 600;">More ˅</span>
+                                </div>
+                                <!-- Hidden fields (revealed by More toggle) -->
+                                <div style="display: none; margin-top: 16px;">
+                                    <div style="display: flex; gap: 16px;">
+                                        <!-- Left column -->
+                                        <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
+                                            <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">⛪ Denomination</label><input type="text" value="Evangelical" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
+                                            <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Traveling</label><label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+                                            <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Pause Account</label><label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+                                            <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Ninja Mode</label><label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+                                            <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">🟢 Online Status</label><input type="text" value="Active" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
+                                        </div>
+                                        <!-- Right column -->
+                                        <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
+                                            <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">🏷️ Interests</label><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">bible study</span><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">sushi</span><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">tacos</span><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">skiing</span><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">soccer</span></div></div>
+                                            <div style="flex: 1;"></div>
+                                            <button onclick="alert('Profile shared!')" style="width: 100%; padding: 10px 16px; background: var(--grey50); border: 1px solid var(--border-color); border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--text-primary); cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--grey100)'" onmouseout="this.style.background='var(--grey50)'">📤 Share Profile</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -2968,23 +3037,46 @@
 
                             <!-- PREFERENCES & PREMIUM SECTION -->
                             <div style="background: var(--grey0); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px;">
+                                <!-- Visible fields -->
                                 <div style="display: flex; gap: 16px;">
-                                    <!-- Left column: Preferences -->
+                                    <!-- Left column -->
                                     <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
-                                        <div style="font-size: 13px; font-weight: 700; color: var(--text-primary);">Preferences</div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Age (low)</label><input type="text" value="23" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Age (high)</label><input type="text" value="43" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Search Radius</label><input type="text" value="300" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Match Notifications</label><label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
                                         <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Message Notifications</label><label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
                                     </div>
-                                    <!-- Right column: Premium Settings -->
+                                    <!-- Right column -->
                                     <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
-                                        <div style="font-size: 13px; font-weight: 700; color: var(--text-primary);">Premium Settings</div>
                                         <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Has Premium</label><label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Expiration</label><input type="text" value="" placeholder="MM/DD/YYYY" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Note Balance</label><input type="text" value="0" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
                                         <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Start a Boost</label><input type="text" value="" placeholder="MM/DD/YYYY" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
+                                    </div>
+                                </div>
+                                <!-- Divider + More/Less toggle -->
+                                <div style="margin-top: 16px; text-align: center;">
+                                    <hr style="border: none; border-top: 1px solid var(--border-color); margin: 0 0 8px 0;">
+                                    <span onclick="toggleMoreFields(this)" style="cursor: pointer; font-size: 12px; color: var(--brand-primary); font-weight: 600;">More ˅</span>
+                                </div>
+                                <!-- Hidden fields (revealed by More toggle) -->
+                                <div style="display: none; margin-top: 16px;">
+                                    <div style="display: flex; gap: 16px;">
+                                        <!-- Left column -->
+                                        <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
+                                            <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">⛪ Denomination</label><input type="text" value="Evangelical" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
+                                            <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Traveling</label><label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+                                            <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Pause Account</label><label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+                                            <div style="display: flex; justify-content: space-between; align-items: center;"><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Ninja Mode</label><label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+                                            <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">🟢 Online Status</label><input type="text" value="Active" onclick="makeEditable(this)" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--grey0); color: var(--text-primary); cursor: pointer; box-sizing: border-box;"></div>
+                                        </div>
+                                        <!-- Right column -->
+                                        <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
+                                            <div><label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">🏷️ Interests</label><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">bible study</span><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">sushi</span><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">tacos</span><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">skiing</span><span style="display: inline-block; padding: 6px 12px; background: var(--grey100); border-radius: 16px; font-size: 12px; color: var(--text-primary); font-weight: 500;">soccer</span></div></div>
+                                            <div style="flex: 1;"></div>
+                                            <button onclick="alert('Profile shared!')" style="width: 100%; padding: 10px 16px; background: var(--grey50); border: 1px solid var(--border-color); border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--text-primary); cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--grey100)'" onmouseout="this.style.background='var(--grey50)'">📤 Share Profile</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
