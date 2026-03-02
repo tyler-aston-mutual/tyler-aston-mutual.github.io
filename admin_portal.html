@@ -722,7 +722,8 @@
             background: var(--brand-primary); color: white; font-size: 11px; font-weight: 700;
             padding: 1px 6px; border-radius: 10px; margin-left: 2px;
         }
-        .txn-table { width: 100%; border-collapse: collapse; }
+        .txn-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .txn-table { width: 100%; border-collapse: collapse; min-width: 500px; }
         .txn-table th {
             text-align: left; padding: 10px 24px; font-size: 11px; font-weight: 700;
             color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;
@@ -1558,7 +1559,7 @@
                 <button>☰ Filter <span class="filter-badge">1</span></button>
                 <button>⬆ Export</button>
             </div>
-            <div style="overflow-y: auto;">
+            <div class="txn-table-wrap" style="overflow-y: auto;">
                 <table class="txn-table">
                     <thead>
                         <tr>
