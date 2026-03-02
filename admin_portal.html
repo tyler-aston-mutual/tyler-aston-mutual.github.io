@@ -1579,6 +1579,21 @@
                             <td>MutualUp 1-Week Subscription</td>
                             <td>Feb 23, 5:13 PM</td>
                         </tr>
+                        <tr data-date="2024-06-10T09:30:00">
+                            <td><span class="txn-pill cancelled">Cancelled</span></td>
+                            <td>MutualUp 1-Month Subscription</td>
+                            <td>Jun 10, 2024, 9:30 AM</td>
+                        </tr>
+                        <tr data-date="2025-01-05T14:22:00">
+                            <td><span class="txn-pill cancelled">Cancelled</span><span class="txn-pill paused">Collection paused ⓘ</span></td>
+                            <td>MutualUp 3-Month Subscription</td>
+                            <td>Jan 5, 2025, 2:22 PM</td>
+                        </tr>
+                        <tr data-date="2025-08-19T11:45:00">
+                            <td><span class="txn-pill cancelled">Cancelled</span></td>
+                            <td>MutualUp Note Pack (10)</td>
+                            <td>Aug 19, 2025, 11:45 AM</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -5666,9 +5681,11 @@
             });
             document.getElementById('moreMenuBackdrop').classList.remove('active');
             document.getElementById('txnModalBackdrop').classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
         function closeTxnModal() {
             document.getElementById('txnModalBackdrop').classList.remove('active');
+            document.body.style.overflow = '';
         }
         function sortTxnTable(el) {
             var tbody = document.getElementById('txnTableBody');
