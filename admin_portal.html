@@ -691,6 +691,56 @@
         }
 
         /* Mobile bottom sheet for more menu */
+        /* Transaction History Modal */
+        .txn-modal-backdrop {
+            display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5); z-index: 20000; justify-content: center; align-items: center;
+        }
+        .txn-modal-backdrop.active { display: flex; }
+        .txn-modal {
+            background: var(--grey0); border-radius: 12px; width: 90%; max-width: 700px; max-height: 80vh;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2); overflow: hidden; display: flex; flex-direction: column;
+        }
+        .txn-modal-header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 24px 16px; border-bottom: 1px solid var(--border-color);
+        }
+        .txn-modal-header h3 { margin: 0; font-size: 16px; font-weight: 700; color: var(--text-primary); }
+        .txn-modal-close {
+            background: none; border: none; font-size: 20px; cursor: pointer;
+            color: var(--text-secondary); padding: 4px 8px; border-radius: 6px; line-height: 1;
+        }
+        .txn-modal-close:hover { background: var(--grey100); }
+        .txn-toolbar { display: flex; gap: 10px; padding: 16px 24px; }
+        .txn-toolbar button {
+            display: flex; align-items: center; gap: 6px; padding: 8px 14px;
+            border: 1px solid var(--border-color); border-radius: 8px; background: var(--grey0);
+            font-size: 13px; font-weight: 600; color: var(--text-primary); cursor: pointer;
+        }
+        .txn-toolbar button:hover { background: var(--grey50); }
+        .txn-toolbar .filter-badge {
+            background: var(--brand-primary); color: white; font-size: 11px; font-weight: 700;
+            padding: 1px 6px; border-radius: 10px; margin-left: 2px;
+        }
+        .txn-table { width: 100%; border-collapse: collapse; }
+        .txn-table th {
+            text-align: left; padding: 10px 24px; font-size: 11px; font-weight: 700;
+            color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .txn-table th:last-child { text-align: right; }
+        .txn-table td { padding: 16px 24px; border-bottom: 1px solid var(--border-color); vertical-align: middle; }
+        .txn-table td:last-child { text-align: right; font-size: 13px; color: var(--text-secondary); white-space: nowrap; }
+        .txn-table td:nth-child(2) { font-size: 14px; font-weight: 500; color: var(--text-primary); }
+        .txn-table tr:last-child td { border-bottom: none; }
+        .txn-pill {
+            display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+            border: 1px solid var(--border-color); color: var(--text-primary); margin-right: 6px;
+        }
+        .txn-pill.active { border-color: #56CA00; color: #56CA00; }
+        .txn-pill.cancelled { border-color: var(--border-color); color: var(--text-secondary); }
+        .txn-pill.paused { border-color: var(--border-color); color: var(--text-secondary); }
+
         /* Toggle Switch */
         .toggle-switch { position: relative; display: inline-block; width: 44px; height: 24px; flex-shrink: 0; }
         .toggle-switch input { opacity: 0; width: 0; height: 0; }
@@ -1495,6 +1545,44 @@
 </head>
 <body>
     <div class="more-menu-backdrop" id="moreMenuBackdrop"></div>
+
+    <!-- Transaction History Modal -->
+    <div class="txn-modal-backdrop" id="txnModalBackdrop" onclick="if(event.target===this)closeTxnModal()">
+        <div class="txn-modal">
+            <div class="txn-modal-header">
+                <h3>Transaction History</h3>
+                <button class="txn-modal-close" onclick="closeTxnModal()">&times;</button>
+            </div>
+            <div class="txn-toolbar">
+                <button>☰ Filter <span class="filter-badge">1</span></button>
+                <button>⬆ Export</button>
+            </div>
+            <div style="overflow-y: auto;">
+                <table class="txn-table">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Product</th>
+                            <th>⟡ Created</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="txn-pill cancelled">Cancelled</span><span class="txn-pill paused">Collection paused ⓘ</span></td>
+                            <td>MutualUp 1-Week Subscription</td>
+                            <td>Feb 23, 5:13 PM</td>
+                        </tr>
+                        <tr>
+                            <td><span class="txn-pill active">Active</span></td>
+                            <td>MutualUp 3-Month Subscription</td>
+                            <td>Nov 17, 2023, 1:04 PM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <!-- SIDEBAR -->
         <div class="sidebar" id="sidebar">
@@ -2002,7 +2090,7 @@
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Manual Verification</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Match History</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Message History</button>
-                                    <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Transaction History</button>
+                                    <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'" onclick="openTxnModal()">Transaction History</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Send Push</button>
                                 </div>
                         </div>
@@ -2367,7 +2455,7 @@
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Manual Verification</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Match History</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Message History</button>
-                                    <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Transaction History</button>
+                                    <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'" onclick="openTxnModal()">Transaction History</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Send Push</button>
                                 </div>
                         </div>
@@ -2732,7 +2820,7 @@
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Manual Verification</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Match History</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Message History</button>
-                                    <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Transaction History</button>
+                                    <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'" onclick="openTxnModal()">Transaction History</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Send Push</button>
                                 </div>
                         </div>
@@ -3097,7 +3185,7 @@
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Manual Verification</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Match History</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Message History</button>
-                                    <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Transaction History</button>
+                                    <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); border-bottom: 1px solid var(--border-color); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'" onclick="openTxnModal()">Transaction History</button>
                                     <button style="width: 100%; padding: 12px 16px; border: none; background: transparent; text-align: left; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text-primary); transition: background 0.2s;" onmouseover="this.style.background='var(--grey50)'" onmouseout="this.style.background='transparent'">Send Push</button>
                                 </div>
                         </div>
@@ -5565,6 +5653,20 @@
                 backdrop.classList.remove('active');
                 btn.style.background = '';
             }
+        }
+
+        function openTxnModal() {
+            // Close the more menu first
+            document.querySelectorAll('.more-menu').forEach(function(menu) {
+                menu.style.display = 'none';
+                var btn = menu.previousElementSibling;
+                if (btn) btn.style.background = '';
+            });
+            document.getElementById('moreMenuBackdrop').classList.remove('active');
+            document.getElementById('txnModalBackdrop').classList.add('active');
+        }
+        function closeTxnModal() {
+            document.getElementById('txnModalBackdrop').classList.remove('active');
         }
 
         function toggleMoreFields(el) {
